@@ -13,6 +13,8 @@ app.use(express.json());
 
 app.use('/biller/api', require('./Routes/User'));
 app.use('/biller/api', require('./Routes/Store'));
+app.use('biller/api', require('./Routes/Bill'));
+app.use('biller/api', require('./Routes/Products'));
 
 
 

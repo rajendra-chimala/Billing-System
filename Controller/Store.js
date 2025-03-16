@@ -1,4 +1,5 @@
 const Store = require('../Model/Store');
+const User = require('../Model/User');
 
 const createStore = async (req, res) => {
     const { name, address, ownerName, email, contact } = req.body;
@@ -15,6 +16,8 @@ const createStore = async (req, res) => {
       });
   
       await newStore.save();
+
+      await User.findByIdAndUpdate(userID, { $push: { storeID: newStore._id } }, { new: true });
       res.status(201).json({ message: 'Store created successfully', store: newStore });
     } catch (error) {
       res.status(400).json({ error: error.message });

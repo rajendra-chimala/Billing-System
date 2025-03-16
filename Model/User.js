@@ -24,6 +24,9 @@ const userSchema = new mongoose.Schema({
         minlength: 6,
         select: false
     },
+    storeID:{
+        type: mongoose.Schema.Types.ObjectId,
+    }
 
 });
 
