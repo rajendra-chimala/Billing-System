@@ -15,6 +15,9 @@ app.use('/biller/api', require('./Routes/User'));
 app.use('/biller/api', require('./Routes/Store'));
 app.use('biller/api', require('./Routes/Bill'));
 app.use('biller/api', require('./Routes/Products'));
+app.get('/',(req,res)=>{
+res.end(`<h1>The Server is Running ...!</h1>`);
+});
 
 
 
